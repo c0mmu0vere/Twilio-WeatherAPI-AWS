@@ -1,7 +1,7 @@
 
 import pandas as pd
 from twilio.rest import Client
-from twilio_config import PHONE_NUMBER, MY_NUMBER
+from twilio_config import *
 from datetime import datetime
 import requests
 from requests import Request, Session
@@ -67,7 +67,7 @@ def prepare_summary(data, query):
 
     return summary
 
-def send_message(TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN, summary):
+def send_message(TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN, summary, PHONE_NUMBER, MY_NUMBER):
 
     account_sid = TWILIO_ACCOUNT_SID
     auth_token = TWILIO_AUTH_TOKEN

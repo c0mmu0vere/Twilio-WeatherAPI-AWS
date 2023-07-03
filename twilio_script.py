@@ -9,7 +9,7 @@
 
 import os
 from twilio.rest import Client
-from twilio_config import TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN,API_KEY_WAPI
+from twilio_config import *
 import time
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
@@ -36,7 +36,7 @@ for i in tqdm(range(24),colour = 'green'):
 summary = prepare_summary(data, query)
 
 # Send Message
-message_id = send_message(TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN, summary)
+message_id = send_message(TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN, summary, PHONE_NUMBER, MY_NUMBER)
 
 
 print('Message Sent ' + message_id)
